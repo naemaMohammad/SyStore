@@ -1,5 +1,4 @@
 import 'package:flutter/material.dart';
-import 'package:user_app/core/theme/color.dart';
 import 'package:user_app/view/lana/login.dart';
 import 'package:user_app/view/lana/signup.dart';
 
@@ -9,17 +8,16 @@ class Start extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-     // backgroundColor: AppColors.b,
       body: SafeArea(
         child: Center(
           child: Column(
             mainAxisAlignment: MainAxisAlignment.center,
             children: [
               SizedBox(height: 130),
-              Image.asset('images/Logo .png', width: 211, height: 215),
+              Image.asset('assets/images/logo.png', width: 211, height: 215),
               SizedBox(height: 30),
               Text(
-                'STOREIA',
+                'STORIA',
                 style: TextStyle(
                   fontSize: 48,
                   fontWeight: FontWeight.w900,
@@ -83,7 +81,7 @@ class Start extends StatelessWidget {
                     },
                     icon: Icon(
                       Icons.arrow_circle_right,
-                      color: AppColors.primary,
+                      color: Theme.of(context).primaryColor,
                       size: 35,
                     ),
                   ),

@@ -7,10 +7,12 @@ class AppTheme {
       brightness: Brightness.light,
       primaryColor: AppColors.primary,
       scaffoldBackgroundColor: AppColors.backgroundLight,
+      secondaryHeaderColor: AppColors.backgroundSecondaryLight,
 
       colorScheme: const ColorScheme.light(
         primary: AppColors.primary,
         secondary: AppColors.secondary,
+
       ),
 
       appBarTheme: const AppBarTheme(
@@ -30,7 +32,7 @@ class AppTheme {
       brightness: Brightness.dark,
       primaryColor: AppColors.primary,
       scaffoldBackgroundColor: AppColors.backgroundDark,
-
+      secondaryHeaderColor: AppColors.backgroundSecondaryDark,
       colorScheme: const ColorScheme.dark(
         primary: AppColors.primary,
         secondary: AppColors.secondary,
@@ -45,6 +47,10 @@ class AppTheme {
         bodyMedium: TextStyle(color: AppColors.textDark),
         bodySmall: TextStyle(color: AppColors.textSecondaryDark)
       ),
+
+      
     );
+
+
   }
 }
