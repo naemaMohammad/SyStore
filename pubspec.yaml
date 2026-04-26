@@ -60,9 +60,12 @@ flutter:
   # To add assets to your application, add an assets section, like this:
   assets:
     - assets/images/logo.png
-    - assets/images/logo_part1.jpg
-    - assets/images/logo_part2.jpg
     - assets/images/STORIA4.png
+    - assets/images/flog.png
+    - assets/images/hello1.jpg
+    - assets/images/hello2.jpg
+    - assets/images/hello3.jpg
+    - assets/images/hello4.jpg
   #   - images/a_dot_ham.jpeg
 
   # An image asset can refer to one or more resolution-specific "variants", see
@@ -82,7 +85,7 @@ flutter:
         - asset: assets/fonts/NunitoSans-VariableFont_YTLC,opsz,wdth,wght.ttf
   #       - asset: fonts/Schyler-Italic.ttf
   #         style: italic
-    - family: Raleway-VariableFont_wgh
+    - family: Raleway-VariableFont_wght
       fonts:
         - asset: assets/fonts/Raleway-VariableFont_wght.ttf
   #       - asset: fonts/TrajanPro_Bold.ttf
