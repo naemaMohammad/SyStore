@@ -12,17 +12,16 @@ class AppTheme {
       colorScheme: const ColorScheme.light(
         primary: AppColors.primary,
         secondary: AppColors.secondary,
+      ),
 
+      textTheme: const TextTheme(
+        bodyMedium: TextStyle(color: AppColors.textLight),
+        bodySmall: TextStyle(color: AppColors.textSecondaryLight),
       ),
 
       appBarTheme: const AppBarTheme(
         backgroundColor: AppColors.primary,
         foregroundColor: Colors.white,
-      ),
-
-      textTheme: const TextTheme(
-        bodyMedium: TextStyle(color: AppColors.textLight),
-        bodySmall: TextStyle(color: AppColors.textSecondaryLight)
       ),
     );
   }
@@ -38,19 +37,15 @@ class AppTheme {
         secondary: AppColors.secondary,
       ),
 
+      textTheme: const TextTheme(
+        bodyMedium: TextStyle(color: AppColors.textDark),
+        bodySmall: TextStyle(color: AppColors.textSecondaryDark),
+      ),
+
       appBarTheme: const AppBarTheme(
         backgroundColor: Colors.black,
         foregroundColor: Colors.white,
       ),
-
-      textTheme: const TextTheme(
-        bodyMedium: TextStyle(color: AppColors.textDark),
-        bodySmall: TextStyle(color: AppColors.textSecondaryDark)
-      ),
-
-      
     );
-
-
   }
 }

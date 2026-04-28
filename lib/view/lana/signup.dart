@@ -1,6 +1,4 @@
 import 'package:flutter/material.dart';
-import 'package:user_app/view/lana/login.dart';
-import 'package:user_app/view/lana/start.dart';
 import 'package:user_app/view/lana/verification.dart';
 
 class SignUp extends StatefulWidget {
@@ -11,11 +9,11 @@ class SignUp extends StatefulWidget {
 
 class _SignUpState extends State<SignUp> {
   final TextEditingController nameController = TextEditingController();
-  final TextEditingController emailController = TextEditingController();
-  final TextEditingController passwordController = TextEditingController();
+
   final TextEditingController phoneController = TextEditingController();
 
   bool isPasswordHidden = true;
+  String gender = " ";
 
   @override
   Widget build(BuildContext context) {
@@ -29,8 +27,9 @@ class _SignUpState extends State<SignUp> {
           SafeArea(
             child: Column(
               children: [
-                SizedBox(height: 230),
+                Expanded(flex: 2, child: SizedBox()),
                 Expanded(
+                  flex: 4,
                   child: Container(
                     width: double.infinity,
                     padding: const EdgeInsets.symmetric(
@@ -54,7 +53,7 @@ class _SignUpState extends State<SignUp> {
                           Padding(
                             padding: const EdgeInsets.symmetric(
                               horizontal: 10,
-                              vertical: 2,
+                              vertical: 10,
                             ),
                             child: Text(
                               "Create Account",
@@ -66,11 +65,11 @@ class _SignUpState extends State<SignUp> {
                               ),
                             ),
                           ),
-                          const SizedBox(height: 20),
+                          const SizedBox(height: 30),
                           TextFormField(
                             controller: nameController,
                             decoration: InputDecoration(
-                              hintText: "Name",
+                              hintText: "Username",
                               hintStyle: TextStyle(
                                 fontSize: 16,
                                 fontWeight: FontWeight.w500,
@@ -91,79 +90,7 @@ class _SignUpState extends State<SignUp> {
                               ),
                             ),
                           ),
-
-                          const SizedBox(height: 20),
-
-                          TextFormField(
-                            controller: emailController,
-                            keyboardType: TextInputType.emailAddress,
-                            obscureText: true,
-                            decoration: InputDecoration(
-                              hintText: "Email",
-                              hintStyle: TextStyle(
-                                fontSize: 16,
-                                fontWeight: FontWeight.w500,
-                                fontFamily: 'Raleway-VariableFont_wght',
-                                color: Theme.of(
-                                  context,
-                                ).textTheme.bodySmall?.color,
-                              ),
-                              filled: true,
-                              fillColor: Theme.of(context).secondaryHeaderColor,
-                              contentPadding: EdgeInsets.symmetric(
-                                horizontal: 20,
-                                vertical: 20,
-                              ),
-                              border: OutlineInputBorder(
-                                borderRadius: BorderRadius.circular(60),
-                                borderSide: BorderSide.none,
-                              ),
-                            ),
-                          ),
-
-                          const SizedBox(height: 20),
-                          TextFormField(
-                            controller: passwordController,
-                            obscureText: isPasswordHidden,
-                            decoration: InputDecoration(
-                              hintText: "Password",
-                              hintStyle: TextStyle(
-                                fontSize: 16,
-                                fontWeight: FontWeight.w500,
-                                fontFamily: 'Raleway-VariableFont_wght',
-                                color: Theme.of(
-                                  context,
-                                ).textTheme.bodySmall?.color,
-                              ),
-                              filled: true,
-                              fillColor: Theme.of(context).secondaryHeaderColor,
-                              contentPadding: EdgeInsets.symmetric(
-                                horizontal: 20,
-                                vertical: 20,
-                              ),
-                              border: OutlineInputBorder(
-                                borderRadius: BorderRadius.circular(60),
-                                borderSide: BorderSide.none,
-                              ),
-                              suffixIcon: IconButton(
-                                icon: Icon(
-                                  isPasswordHidden
-                                      ? Icons.visibility_off_outlined
-                                      : Icons.visibility_outlined,
-                                ),
-                                color: Theme.of(
-                                  context,
-                                ).textTheme.bodySmall?.color,
-                                onPressed: () {
-                                  setState(() {
-                                    isPasswordHidden = !isPasswordHidden;
-                                  });
-                                },
-                              ),
-                            ),
-                          ),
-
-                          const SizedBox(height: 20),
+                          const SizedBox(height: 30),
                           TextFormField(
                             controller: phoneController,
                             keyboardType: TextInputType.phone,
@@ -192,8 +119,6 @@ class _SignUpState extends State<SignUp> {
                                 mainAxisSize: MainAxisSize.min,
                                 children: [
                                   const SizedBox(width: 20),
-
-                                  // 🇸🇾 علم سوريا (صورة)
                                   ClipRRect(
                                     borderRadius: BorderRadius.circular(3),
                                     child: Image.asset(
@@ -204,20 +129,114 @@ class _SignUpState extends State<SignUp> {
                                     ),
                                   ),
                                   const SizedBox(width: 10),
-
-                                  // الخط الفاصل
                                   Container(
                                     width: 1,
                                     height: 20,
                                     color: Colors.grey,
                                   ),
-
                                   const SizedBox(width: 10),
                                 ],
                               ),
                             ),
                           ),
-                          const SizedBox(height: 20),
+                          const SizedBox(height: 40),
+                          Row(
+                            mainAxisAlignment: MainAxisAlignment.center,
+                            children: [
+                              GestureDetector(
+                                onTap: () {
+                                  setState(() {
+                                    gender = "male";
+                                  });
+                                },
+                                child: Row(
+                                  children: [
+                                    Text(
+                                      "male",
+                                      style: TextStyle(
+                                        fontSize: 15,
+                                        fontWeight: FontWeight.w500,
+                                        fontFamily: 'Raleway-VariableFont_wght',
+                                        color: Theme.of(
+                                          context,
+                                        ).textTheme.bodyMedium?.color,
+                                      ),
+                                    ),
+                                    const SizedBox(width: 8),
+                                    Container(
+                                      width: 28,
+                                      height: 28,
+                                      decoration: BoxDecoration(
+                                        shape: BoxShape.circle,
+                                        color: gender == "male"
+                                            ? Theme.of(context).primaryColor
+                                            : Colors.transparent,
+                                        border: Border.all(
+                                          color: gender == "male"
+                                              ? Theme.of(context).primaryColor
+                                              : Colors.grey,
+                                        ),
+                                      ),
+                                      child: gender == "male"
+                                          ? const Icon(
+                                              Icons.check,
+                                              size: 18,
+                                              color: Colors.white,
+                                            )
+                                          : const SizedBox.shrink(),
+                                    ),
+                                  ],
+                                ),
+                              ),
+                              const SizedBox(width: 50),
+                              GestureDetector(
+                                onTap: () {
+                                  setState(() {
+                                    gender = "female";
+                                  });
+                                },
+                                child: Row(
+                                  children: [
+                                    Text(
+                                      "female",
+                                      style: TextStyle(
+                                        fontSize: 15,
+                                        fontWeight: FontWeight.w500,
+                                        fontFamily: 'Raleway-VariableFont_wght',
+                                        color: Theme.of(
+                                          context,
+                                        ).textTheme.bodyMedium?.color,
+                                      ),
+                                    ),
+                                    const SizedBox(width: 8),
+                                    Container(
+                                      width: 28,
+                                      height: 28,
+                                      decoration: BoxDecoration(
+                                        shape: BoxShape.circle,
+                                        color: gender == "female"
+                                            ? Theme.of(context).primaryColor
+                                            : Colors.transparent,
+                                        border: Border.all(
+                                          color: gender == "female"
+                                              ? Theme.of(context).primaryColor
+                                              : Colors.grey,
+                                        ),
+                                      ),
+                                      child: gender == "female"
+                                          ? const Icon(
+                                              Icons.check,
+                                              size: 18,
+                                              color: Colors.white,
+                                            )
+                                          : const SizedBox.shrink(),
+                                    ),
+                                  ],
+                                ),
+                              ),
+                            ],
+                          ),
+                          SizedBox(height: 50),
                           SizedBox(
                             width: double.infinity,
                             child: MaterialButton(
@@ -225,7 +244,11 @@ class _SignUpState extends State<SignUp> {
                                 Navigator.push(
                                   context,
                                   MaterialPageRoute(
-                                    builder: (context) => CodeScreen(),
+                                    builder: (context) => CodeScreen(
+                                      title: "Hello !!",
+                                      subtitle: "Type your activation code",
+                                      isSignUp: true,
+                                    ),
                                   ),
                                 );
                               },
@@ -249,18 +272,11 @@ class _SignUpState extends State<SignUp> {
                               ),
                             ),
                           ),
-
-                          const SizedBox(height: 10),
-
+                          SizedBox(height: 5),
                           Center(
                             child: TextButton(
                               onPressed: () {
-                                Navigator.push(
-                                  context,
-                                  MaterialPageRoute(
-                                    builder: (context) => Start(),
-                                  ),
-                                );
+                                Navigator.pop(context);
                               },
                               child: Text(
                                 'Cancel',

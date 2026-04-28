@@ -1,14 +1,11 @@
 import 'package:flutter/material.dart';
-import 'package:user_app/view/lana/resetpassword.dart';
-import 'package:user_app/view/lana/settings.dart';
-import 'package:user_app/view/lana/signup.dart';
+import 'package:user_app/view/lana/verification.dart';
 
 class Login extends StatelessWidget {
   const Login({super.key});
 
   @override
   Widget build(BuildContext context) {
-    final TextEditingController passwordController = TextEditingController();
     final TextEditingController phoneController = TextEditingController();
     return Scaffold(
       resizeToAvoidBottomInset: false,
@@ -22,7 +19,7 @@ class Login extends StatelessWidget {
               children: [
                 const Expanded(flex: 4, child: SizedBox()),
                 Expanded(
-                  flex: 6,
+                  flex: 4,
                   child: Container(
                     width: double.infinity,
                     padding: const EdgeInsets.symmetric(
@@ -46,7 +43,7 @@ class Login extends StatelessWidget {
                           Padding(
                             padding: const EdgeInsets.symmetric(
                               horizontal: 10,
-                              vertical: 2,
+                              vertical: 10,
                             ),
                             child: Text(
                               "Login",
@@ -63,8 +60,8 @@ class Login extends StatelessWidget {
                             children: [
                               Padding(
                                 padding: const EdgeInsets.symmetric(
-                                  horizontal: 10.5,
-                                  vertical: 2,
+                                  horizontal: 11,
+                                  vertical: 5,
                                 ),
                                 child: Text(
                                   "Good to see you back!",
@@ -87,12 +84,12 @@ class Login extends StatelessWidget {
                               ),
                             ],
                           ),
-                          const SizedBox(height: 30),
+                          const SizedBox(height: 25),
                           TextFormField(
                             controller: phoneController,
                             keyboardType: TextInputType.phone,
                             decoration: InputDecoration(
-                              hintText: "Phone",
+                              hintText: "Your number",
                               hintStyle: TextStyle(
                                 fontSize: 16,
                                 fontWeight: FontWeight.w500,
@@ -104,7 +101,7 @@ class Login extends StatelessWidget {
                               filled: true,
                               fillColor: Theme.of(context).secondaryHeaderColor,
                               contentPadding: EdgeInsets.symmetric(
-                                horizontal: 20,
+                                horizontal: 25,
                                 vertical: 20,
                               ),
                               border: OutlineInputBorder(
@@ -114,37 +111,7 @@ class Login extends StatelessWidget {
                             ),
                           ),
 
-                          const SizedBox(height: 30),
-
-                          TextFormField(
-                            controller: passwordController,
-
-                            obscureText: true,
-                            decoration: InputDecoration(
-                              hintText: "Password",
-                              hintStyle: TextStyle(
-                                fontSize: 16,
-                                fontWeight: FontWeight.w500,
-                                fontFamily: 'Raleway-VariableFont_wght',
-                                color: Theme.of(
-                                  context,
-                                ).textTheme.bodySmall?.color,
-                              ),
-                              filled: true,
-                              fillColor: Theme.of(context).secondaryHeaderColor,
-                              contentPadding: EdgeInsets.symmetric(
-                                horizontal: 20,
-                                vertical: 20,
-                              ),
-                              border: OutlineInputBorder(
-                                borderRadius: BorderRadius.circular(60),
-                                borderSide: BorderSide.none,
-                              ),
-                            ),
-                          ),
-
-                          const SizedBox(height: 30),
-
+                          const SizedBox(height: 35),
                           SizedBox(
                             width: double.infinity,
                             child: MaterialButton(
@@ -152,7 +119,11 @@ class Login extends StatelessWidget {
                                 Navigator.push(
                                   context,
                                   MaterialPageRoute(
-                                    builder: (context) => Settings(),
+                                    builder: (context) => CodeScreen(
+                                      title: "welcome back!",
+                                      subtitle: "Type your activation code",
+                                      isSignUp: false,
+                                    ),
                                   ),
                                 );
                               },
@@ -177,20 +148,15 @@ class Login extends StatelessWidget {
                             ),
                           ),
 
-                          const SizedBox(height: 20),
+                          const SizedBox(height: 10),
 
                           Center(
                             child: TextButton(
                               onPressed: () {
-                                Navigator.push(
-                                  context,
-                                  MaterialPageRoute(
-                                    builder: (context) => ResetPassword(),
-                                  ),
-                                );
+                                Navigator.pop(context);
                               },
                               child: Text(
-                                'Forgot your password?',
+                                'Cancel',
                                 style: TextStyle(
                                   fontSize: 15,
                                   fontWeight: FontWeight.w300,

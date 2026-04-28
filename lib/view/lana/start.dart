@@ -8,13 +8,14 @@ class Start extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+      backgroundColor: Theme.of(context).scaffoldBackgroundColor,
       body: SafeArea(
         child: Center(
           child: Column(
             mainAxisAlignment: MainAxisAlignment.center,
             children: [
               SizedBox(height: 130),
-              Image.asset('assets/images/logo.png', width: 211, height: 215),
+              Image.asset('assets/images/logo.png', width: 300, height: 250),
               SizedBox(height: 30),
               Text(
                 'STORIA',
