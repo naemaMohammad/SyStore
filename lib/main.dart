@@ -1,7 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:get/get_navigation/src/root/get_material_app.dart';
 import 'package:user_app/core/routes.dart';
-import 'package:user_app/view/ranim/screen/MyOrder.dart';
 
 void main() {
   runApp(MyApp());
@@ -18,7 +17,7 @@ class _MyAppState extends State<MyApp> {
   Widget build(BuildContext context) {
     return GetMaterialApp(
       debugShowCheckedModeBanner: false,
-      initialRoute: '/orders',
+      initialRoute: '/orderproduct',
       getPages: AppPages.pages,
     );
   }

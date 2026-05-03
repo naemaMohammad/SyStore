@@ -38,9 +38,9 @@ class Myorder extends StatelessWidget {
             ListView.builder(
               shrinkWrap: true,
               physics: const NeverScrollableScrollPhysics(),
-              itemCount: controller.orders.length,
+              itemCount: controller.filteredOrders.length,
               itemBuilder: (context, index) {
-                final order = controller.orders[index];
+                final order = controller.filteredOrders[index];
                 return OrderCard(
                   orderId: order.id,
                   date: order.date,
