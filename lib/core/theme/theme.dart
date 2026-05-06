@@ -12,6 +12,7 @@ class AppTheme {
       colorScheme: const ColorScheme.light(
         primary: AppColors.primary,
         secondary: AppColors.secondary,
+        tertiary: AppColors.third,
       ),
 
       textTheme: const TextTheme(
@@ -35,6 +36,7 @@ class AppTheme {
       colorScheme: const ColorScheme.dark(
         primary: AppColors.primary,
         secondary: AppColors.secondary,
+        tertiary: AppColors.third,
       ),
 
       textTheme: const TextTheme(

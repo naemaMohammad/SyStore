@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:get/get.dart';
 import 'package:user_app/view/lana/verification.dart';
 
 class Login extends StatelessWidget {
@@ -27,7 +28,9 @@ class Login extends StatelessWidget {
                       vertical: 20,
                     ),
                     decoration: BoxDecoration(
-                      color: Theme.of(context).scaffoldBackgroundColor,
+                      color: Theme.of(
+                        context,
+                      ).scaffoldBackgroundColor.withOpacity(0.8),
                       borderRadius: BorderRadius.only(
                         topLeft: Radius.circular(60),
                         topRight: Radius.circular(60),
@@ -46,11 +49,12 @@ class Login extends StatelessWidget {
                               vertical: 10,
                             ),
                             child: Text(
-                              "Login",
+                              "login".tr,
                               style: TextStyle(
                                 fontSize: 24,
                                 fontWeight: FontWeight.w700,
-                                fontFamily: 'Raleway-VariableFont_wght',
+                                fontFamily: 'Raleway',
+                                fontFamilyFallback: ['Cairo'],
                                 color: Theme.of(context).primaryColor,
                               ),
                             ),
@@ -64,12 +68,12 @@ class Login extends StatelessWidget {
                                   vertical: 5,
                                 ),
                                 child: Text(
-                                  "Good to see you back!",
+                                  "welcome".tr,
                                   style: TextStyle(
                                     fontSize: 19,
                                     fontWeight: FontWeight.w300,
-                                    fontFamily:
-                                        'NunitoSans-VariableFont_YTLC,opsz,wdth,wght',
+                                    fontFamily: 'NunitoSans',
+                                    fontFamilyFallback: ['Tajawal'],
                                     color: Theme.of(
                                       context,
                                     ).textTheme.bodyMedium?.color,
@@ -89,17 +93,20 @@ class Login extends StatelessWidget {
                             controller: phoneController,
                             keyboardType: TextInputType.phone,
                             decoration: InputDecoration(
-                              hintText: "Your number",
+                              hintText: "number".tr,
                               hintStyle: TextStyle(
                                 fontSize: 16,
                                 fontWeight: FontWeight.w500,
-                                fontFamily: 'Raleway-VariableFont_wght',
+                                fontFamily: 'Raleway',
+                                fontFamilyFallback: ['Cairo'],
                                 color: Theme.of(
                                   context,
                                 ).textTheme.bodySmall?.color,
                               ),
                               filled: true,
-                              fillColor: Theme.of(context).secondaryHeaderColor,
+                              fillColor: Theme.of(
+                                context,
+                              ).secondaryHeaderColor.withOpacity(0.6),
                               contentPadding: EdgeInsets.symmetric(
                                 horizontal: 25,
                                 vertical: 20,
@@ -120,8 +127,8 @@ class Login extends StatelessWidget {
                                   context,
                                   MaterialPageRoute(
                                     builder: (context) => CodeScreen(
-                                      title: "welcome back!",
-                                      subtitle: "Type your activation code",
+                                      title: 'welcome_back',
+                                      subtitle: 'verification_code',
                                       isSignUp: false,
                                     ),
                                   ),
@@ -136,12 +143,12 @@ class Login extends StatelessWidget {
                                 vertical: 20,
                               ),
                               child: Text(
-                                'Next',
+                                "next".tr,
                                 style: TextStyle(
                                   fontSize: 20,
                                   fontWeight: FontWeight.w400,
-                                  fontFamily:
-                                      'NunitoSans-VariableFont_YTLC,opsz,wdth,wght',
+                                  fontFamily: 'NunitoSans',
+                                  fontFamilyFallback: ['Tajawal'],
                                   color: Color(0xFFF3F3F3),
                                 ),
                               ),
@@ -156,12 +163,12 @@ class Login extends StatelessWidget {
                                 Navigator.pop(context);
                               },
                               child: Text(
-                                'Cancel',
+                                "cancel".tr,
                                 style: TextStyle(
                                   fontSize: 15,
                                   fontWeight: FontWeight.w300,
-                                  fontFamily:
-                                      'NunitoSans-VariableFont_YTLC,opsz,wdth,wght',
+                                  fontFamily: 'NunitoSans',
+                                  fontFamilyFallback: ['Tajawal'],
                                   color: Theme.of(
                                     context,
                                   ).textTheme.bodySmall?.color,

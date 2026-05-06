@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:get/get.dart';
 import 'package:user_app/view/lana/verification.dart';
 
 class SignUp extends StatefulWidget {
@@ -37,7 +38,9 @@ class _SignUpState extends State<SignUp> {
                       vertical: 20,
                     ),
                     decoration: BoxDecoration(
-                      color: Theme.of(context).scaffoldBackgroundColor,
+                      color: Theme.of(
+                        context,
+                      ).scaffoldBackgroundColor.withOpacity(0.8),
                       borderRadius: BorderRadius.only(
                         topLeft: Radius.circular(60),
                         topRight: Radius.circular(60),
@@ -56,11 +59,12 @@ class _SignUpState extends State<SignUp> {
                               vertical: 10,
                             ),
                             child: Text(
-                              "Create Account",
+                              "create_account".tr,
                               style: TextStyle(
                                 fontSize: 24,
                                 fontWeight: FontWeight.w700,
-                                fontFamily: 'Raleway-VariableFont_wght',
+                                fontFamily: 'Raleway',
+                                fontFamilyFallback: ['Cairo'],
                                 color: Theme.of(context).primaryColor,
                               ),
                             ),
@@ -69,17 +73,20 @@ class _SignUpState extends State<SignUp> {
                           TextFormField(
                             controller: nameController,
                             decoration: InputDecoration(
-                              hintText: "Username",
+                              hintText: "username".tr,
                               hintStyle: TextStyle(
                                 fontSize: 16,
                                 fontWeight: FontWeight.w500,
-                                fontFamily: 'Raleway-VariableFont_wght',
+                                fontFamily: 'Raleway',
+                                fontFamilyFallback: ['Cairo'],
                                 color: Theme.of(
                                   context,
                                 ).textTheme.bodySmall?.color,
                               ),
                               filled: true,
-                              fillColor: Theme.of(context).secondaryHeaderColor,
+                              fillColor: Theme.of(
+                                context,
+                              ).secondaryHeaderColor.withOpacity(0.6),
                               contentPadding: EdgeInsets.symmetric(
                                 horizontal: 20,
                                 vertical: 20,
@@ -95,17 +102,20 @@ class _SignUpState extends State<SignUp> {
                             controller: phoneController,
                             keyboardType: TextInputType.phone,
                             decoration: InputDecoration(
-                              hintText: "Your number",
+                              hintText: "number".tr,
                               hintStyle: TextStyle(
                                 fontSize: 16,
                                 fontWeight: FontWeight.w500,
-                                fontFamily: 'Raleway-VariableFont_wght',
+                                fontFamily: 'Raleway',
+                                fontFamilyFallback: ['Cairo'],
                                 color: Theme.of(
                                   context,
                                 ).textTheme.bodySmall?.color,
                               ),
                               filled: true,
-                              fillColor: Theme.of(context).secondaryHeaderColor,
+                              fillColor: Theme.of(
+                                context,
+                              ).secondaryHeaderColor.withOpacity(0.6),
                               contentPadding: EdgeInsets.symmetric(
                                 horizontal: 20,
                                 vertical: 20,
@@ -146,17 +156,18 @@ class _SignUpState extends State<SignUp> {
                               GestureDetector(
                                 onTap: () {
                                   setState(() {
-                                    gender = "male";
+                                    gender = "male".tr;
                                   });
                                 },
                                 child: Row(
                                   children: [
                                     Text(
-                                      "male",
+                                      "male".tr,
                                       style: TextStyle(
                                         fontSize: 15,
                                         fontWeight: FontWeight.w500,
-                                        fontFamily: 'Raleway-VariableFont_wght',
+                                        fontFamily: 'Raleway',
+                                        fontFamilyFallback: ['Cairo'],
                                         color: Theme.of(
                                           context,
                                         ).textTheme.bodyMedium?.color,
@@ -168,16 +179,16 @@ class _SignUpState extends State<SignUp> {
                                       height: 28,
                                       decoration: BoxDecoration(
                                         shape: BoxShape.circle,
-                                        color: gender == "male"
+                                        color: gender == "male".tr
                                             ? Theme.of(context).primaryColor
                                             : Colors.transparent,
                                         border: Border.all(
-                                          color: gender == "male"
+                                          color: gender == "male".tr
                                               ? Theme.of(context).primaryColor
                                               : Colors.grey,
                                         ),
                                       ),
-                                      child: gender == "male"
+                                      child: gender == "male".tr
                                           ? const Icon(
                                               Icons.check,
                                               size: 18,
@@ -192,17 +203,18 @@ class _SignUpState extends State<SignUp> {
                               GestureDetector(
                                 onTap: () {
                                   setState(() {
-                                    gender = "female";
+                                    gender = "female".tr;
                                   });
                                 },
                                 child: Row(
                                   children: [
                                     Text(
-                                      "female",
+                                      "female".tr,
                                       style: TextStyle(
                                         fontSize: 15,
                                         fontWeight: FontWeight.w500,
-                                        fontFamily: 'Raleway-VariableFont_wght',
+                                        fontFamily: 'Raleway',
+                                        fontFamilyFallback: ['Cairo'],
                                         color: Theme.of(
                                           context,
                                         ).textTheme.bodyMedium?.color,
@@ -214,16 +226,16 @@ class _SignUpState extends State<SignUp> {
                                       height: 28,
                                       decoration: BoxDecoration(
                                         shape: BoxShape.circle,
-                                        color: gender == "female"
+                                        color: gender == "female".tr
                                             ? Theme.of(context).primaryColor
                                             : Colors.transparent,
                                         border: Border.all(
-                                          color: gender == "female"
+                                          color: gender == "female".tr
                                               ? Theme.of(context).primaryColor
                                               : Colors.grey,
                                         ),
                                       ),
-                                      child: gender == "female"
+                                      child: gender == "female".tr
                                           ? const Icon(
                                               Icons.check,
                                               size: 18,
@@ -245,8 +257,8 @@ class _SignUpState extends State<SignUp> {
                                   context,
                                   MaterialPageRoute(
                                     builder: (context) => CodeScreen(
-                                      title: "Hello !!",
-                                      subtitle: "Type your activation code",
+                                      title: 'hello_title',
+                                      subtitle: 'activation_code',
                                       isSignUp: true,
                                     ),
                                   ),
@@ -261,12 +273,12 @@ class _SignUpState extends State<SignUp> {
                                 vertical: 20,
                               ),
                               child: Text(
-                                'Next',
+                                'done'.tr,
                                 style: TextStyle(
                                   fontSize: 20,
                                   fontWeight: FontWeight.w400,
-                                  fontFamily:
-                                      'NunitoSans-VariableFont_YTLC,opsz,wdth,wght',
+                                  fontFamily: 'NunitoSans',
+                                  fontFamilyFallback: ['Tajawal'],
                                   color: Color(0xFFF3F3F3),
                                 ),
                               ),
@@ -279,12 +291,12 @@ class _SignUpState extends State<SignUp> {
                                 Navigator.pop(context);
                               },
                               child: Text(
-                                'Cancel',
+                                'cancel'.tr,
                                 style: TextStyle(
                                   fontSize: 15,
                                   fontWeight: FontWeight.w300,
-                                  fontFamily:
-                                      'NunitoSans-VariableFont_YTLC,opsz,wdth,wght',
+                                  fontFamily: 'NunitoSans',
+                                  fontFamilyFallback: ['Tajawal'],
                                   color: Theme.of(
                                     context,
                                   ).textTheme.bodySmall?.color,
