@@ -1,4 +1,6 @@
 import 'package:flutter/material.dart';
+import 'package:get/get_navigation/src/root/get_material_app.dart';
+import 'package:user_app/core/routes.dart';
 import 'package:user_app/core/theme/theme.dart';
 // <<<<<<< HEAD
 // import 'package:get/get_navigation/src/root/get_material_app.dart';
@@ -15,11 +17,14 @@ class MyApp extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return MaterialApp(
+    return GetMaterialApp(
       debugShowCheckedModeBanner: false,
       theme: AppTheme.light(),
       darkTheme: AppTheme.dark(),
       themeMode: ThemeMode.system,
+      initialRoute: '/orders',
+      getPages: AppPages.pages,
+
     );
   }
 }
