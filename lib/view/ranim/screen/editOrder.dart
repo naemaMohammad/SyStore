@@ -13,7 +13,7 @@ class Editorder extends StatelessWidget {
     final controller = Get.find<EditOrderController>();
 
     return  Scaffold(
-      backgroundColor: Colors.white,
+      backgroundColor: Colors.white,//Theme.of(context).scafolbacground
       appBar: AppBar(
         title: const Text(
           "My Cart",
