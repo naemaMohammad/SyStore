@@ -14,44 +14,79 @@ class Myorder extends StatelessWidget {
     final controller = Get.find<OrdersController>();
 
     return Scaffold(
-      backgroundColor: Colors.white,
-      appBar: AppBar(
-        title: const Text(
-          "My Order",
-          style: TextStyle(fontSize: 30, fontWeight: FontWeight.bold),
+      backgroundColor:  Theme.of(context).scaffoldBackgroundColor,
+      appBar:  AppBar(
+        backgroundColor: Theme.of(context).scaffoldBackgroundColor,
+        toolbarHeight: 66,
+        elevation: 0,
+        scrolledUnderElevation: 0,
+        leading: IconButton(
+          icon: Icon(
+            Icons.arrow_back_ios_new,
+            color: Theme.of(context).textTheme.bodyMedium?.color,
+          ),
+          onPressed: () => Navigator.pop(context),
         ),
-        elevation: 5,
-        shadowColor: Colors.black,
-        toolbarHeight: 70,
-        backgroundColor: Colors.white,
-        
-      ),
-      body: Obx(() {
-        if (controller.isLoading.value) {
-          return const Center(child: CircularProgressIndicator());
-        }
-        return ListView(
-          children: [
-            SizedBox(height: 10),
-            OrderFilters(),
-            SizedBox(height: 10),
-            ListView.builder(
-              shrinkWrap: true,
-              physics: const NeverScrollableScrollPhysics(),
-              itemCount: controller.filteredOrders.length,
-              itemBuilder: (context, index) {
-                final order = controller.filteredOrders[index];
-                return OrderCard(
-                  orderId: order.id,
-                  date: order.date,
-                  total: order.total,
-                  status: order.status,
-                );
-              },
+        title: Text(
+          'My Order',
+          style: TextStyle(
+            fontFamily: 'Raleway',
+            fontFamilyFallback: ['Cairo'],
+            fontWeight: FontWeight.w700,
+            fontSize: 23,
+            color: Theme.of(context).textTheme.bodyMedium?.color,
+          ),
+        ),
+        bottom: PreferredSize(
+          preferredSize: const Size.fromHeight(6),
+          child: Container(
+            height: 1,
+            decoration: BoxDecoration(
+              boxShadow: [
+                BoxShadow(
+  color: Theme.of(context).dividerColor.withOpacity(0.3),
+  blurRadius: 1,
+),
+              ],
             ),
-          ],
+          ),
+        ),
+      ),
+      body: Column(
+  children: [
+    const SizedBox(height: 10),
+
+    const OrderFilters(),
+
+    const SizedBox(height: 10),
+
+    Expanded(
+      child: Obx(() {
+        if (controller.isLoading.value) {
+          return  Center(
+            child: CircularProgressIndicator(
+  color: Theme.of(context).colorScheme.primary,
+),
+          );
+        }
+
+        return ListView.builder(
+          itemCount: controller.filteredOrders.length,
+          itemBuilder: (context, index) {
+            final order = controller.filteredOrders[index];
+
+            return OrderCard(
+              orderId: order.id,
+              date: order.date,
+              total: order.total,
+              status: order.status,
+            );
+          },
         );
       }),
+    ),
+  ],
+),
     );
   }
 }

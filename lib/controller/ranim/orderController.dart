@@ -4,7 +4,7 @@ class Ordercontroller extends GetxController {
 
   var products = [
     {
-      "image": "assets/images/Screenshot 2026-05-03 141702.png",
+      "image": "assets/images/photo_2026-05-09_17-04-30.jpg",
       "title": "Modern T-shirt",
       "price": 300,
       "size": "M",
@@ -12,7 +12,7 @@ class Ordercontroller extends GetxController {
       "qty": 1,
     },
     {
-      "image": "assets/images/Screenshot 2026-05-03 141702.png",
+      "image": "assets/images/photo_2026-05-09_17-04-30.jpg",
       "title": "Modern T-shirt",
       "price": 200,
       "size": "L",

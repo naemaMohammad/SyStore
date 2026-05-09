@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:awesome_dialog/awesome_dialog.dart';
 import 'package:get/get.dart';
+import 'package:user_app/view/ranim/widgets/myOrder/dialogFunctionForDelete.dart';
 
 class OrderCard extends StatelessWidget {
   final String orderId;
@@ -51,16 +52,15 @@ class OrderCard extends StatelessWidget {
       margin: const EdgeInsets.symmetric(horizontal: 12, vertical: 8),
       padding: const EdgeInsets.all(16),
       decoration: BoxDecoration(
-        color: Colors.white,
+        color: Theme.of(context).cardColor,
         borderRadius: BorderRadius.circular(15),
         border: Border.all(
-          color: const Color.fromARGB(255, 139, 145, 147),
+          color: Theme.of(context).dividerColor,
           width: 0.2,
         ),
         boxShadow: [
           BoxShadow(
-            // ignore: deprecated_member_use
-            color: Colors.grey.withOpacity(0.10),
+            color: Theme.of(context).shadowColor.withOpacity(0.1),
             blurRadius: 4,
             offset: const Offset(0, 20),
           ),
@@ -71,7 +71,6 @@ class OrderCard extends StatelessWidget {
         children: [
           CircleAvatar(
             radius: 25,
-            // ignore: deprecated_member_use
             backgroundColor: color.withOpacity(0.15),
             child: Icon(icon, color: color, size: 35),
           ),
@@ -84,15 +83,37 @@ class OrderCard extends StatelessWidget {
               children: [
                 Text(
                   "Order #$orderId",
-                  style: const TextStyle(fontWeight: FontWeight.bold),
+                  style: TextStyle(
+                    fontWeight: FontWeight.bold,
+                    color: Theme.of(context).textTheme.bodyMedium?.color,
+                  ),
                 ),
                 const SizedBox(height: 4),
-                Text("order date $date"),
-                Text("total $total \$"),
-                Text("status $status"),
+
+                Text(
+                  "order date $date",
+                  style: TextStyle(
+                    color: Theme.of(context).textTheme.bodySmall?.color,
+                  ),
+                ),
+
+                Text(
+                  "total $total \$",
+                  style: TextStyle(
+                    color: Theme.of(context).textTheme.bodySmall?.color,
+                  ),
+                ),
+
+                Text(
+                  "status $status",
+                  style: TextStyle(
+                    color: Theme.of(context).textTheme.bodySmall?.color,
+                  ),
+                ),
               ],
             ),
           ),
+
           buildInlineButtons(context),
         ],
       ),
@@ -108,35 +129,39 @@ class OrderCard extends StatelessWidget {
             onTap: () {
               Get.toNamed('/editorder');
             },
-            child: const Icon(Icons.edit, size: 23),
+            child: Icon(
+              Icons.edit,
+              size: 23,
+              color: Theme.of(context).textTheme.bodyMedium?.color,
+            ),
           ),
+
           const SizedBox(width: 7),
+
           InkWell(
             onTap: () {
-              AwesomeDialog(
+              showAppDialog(
                 context: context,
-                dialogType: DialogType.question,
-                animType: AnimType.bottomSlide,
-                btnCancelOnPress: () {},
-                descTextStyle: TextStyle(
-                  fontWeight: FontWeight.bold,
-                  fontSize: 16,
-                ),
-                desc: 'Are you sure you want to \n delete the order ?',
-                btnOkOnPress: () {},
-                btnOkText: "Delete",
-                btnCancelColor: Colors.black,
-                btnOkColor: const Color.fromARGB(255, 83, 82, 84),
-                dismissOnTouchOutside: true,
-                // ignore: deprecated_member_use
-                barrierColor: Colors.black.withOpacity(0.8),
-              ).show();
+                title: '',
+                message: 'Are you sure you want to delete this item?',
+                confirmText: 'Delete',
+                confirmColor: Theme.of(context).colorScheme.tertiary,
+                icon: Icons.delete,
+                onConfirm: () {
+                  print('Item deleted');
+                },
+              );
             },
-            child: const Icon(Icons.delete, color: Colors.red, size: 24),
+            child: Icon(
+              Icons.delete,
+              color: Theme.of(context).colorScheme.tertiary,
+              size: 24,
+            ),
           ),
         ],
       );
     }
+
     if (status == "Preparing" ||
         status == "On the way" ||
         status == "Delivered") {
@@ -144,9 +169,14 @@ class OrderCard extends StatelessWidget {
         onTap: () {
           Get.toNamed('/showorder');
         },
-        child: const Icon(Icons.visibility, size: 20),
+        child: Icon(
+          Icons.visibility,
+          size: 20,
+          color: Theme.of(context).textTheme.bodyMedium?.color,
+        ),
       );
     }
+
     if (status == "Cancelled") {
       return InkWell(
         onTap: () {
@@ -157,15 +187,19 @@ class OrderCard extends StatelessWidget {
             title: 'Cancelled',
             desc: 'there are no captain',
             btnOkOnPress: () {},
-            btnOkColor: const Color.fromARGB(255, 83, 82, 84),
+            btnOkColor: Theme.of(context).colorScheme.primary,
             dismissOnTouchOutside: true,
-            // ignore: deprecated_member_use
             barrierColor: Colors.black.withOpacity(0.8),
           ).show();
         },
-        child: const Icon(Icons.info, color: Colors.red, size: 23),
+        child: Icon(
+          Icons.info,
+          color: Theme.of(context).colorScheme.tertiary,
+          size: 23,
+        ),
       );
     }
+
     return const SizedBox();
   }
 }

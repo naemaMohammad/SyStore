@@ -1,5 +1,6 @@
 import 'package:awesome_dialog/awesome_dialog.dart';
 import 'package:flutter/material.dart';
+import 'package:user_app/view/ranim/widgets/myOrder/dialogFunctionForDelete.dart';
 
 class EditProductCard extends StatelessWidget {
   final String image;
@@ -31,11 +32,11 @@ class EditProductCard extends StatelessWidget {
       margin: const EdgeInsets.symmetric(vertical: 8, horizontal: 16),
       padding: const EdgeInsets.all(10),
       decoration: BoxDecoration(
-        color: Colors.white,
+        color: Theme.of(context).cardColor,
         borderRadius: BorderRadius.circular(16),
         boxShadow: [
           BoxShadow(
-            color: Colors.black.withOpacity(0.05),
+            color: Theme.of(context).shadowColor.withOpacity(0.1),
             blurRadius: 8,
           ),
         ],
@@ -47,26 +48,22 @@ class EditProductCard extends StatelessWidget {
             right: 0,
             child: GestureDetector(
               onTap: (){
-                AwesomeDialog(
-                context: context,
-                dialogType: DialogType.question,
-                animType: AnimType.bottomSlide,
-                btnCancelOnPress: () {},
-                descTextStyle: TextStyle(
-                  fontWeight: FontWeight.bold,
-                  fontSize: 16,
-                ),
-                desc: 'Are you sure you want to \n delete this product ?',
-                btnOkOnPress: () {},
-                btnOkText: "Delete",
-                btnCancelColor: Colors.black,
-                btnOkColor: const Color.fromARGB(255, 83, 82, 84),
-                dismissOnTouchOutside: true,
-                // ignore: deprecated_member_use
-                barrierColor: Colors.black.withOpacity(0.8),
-              ).show();
+                 showAppDialog(
+    context: context,
+    title: '',
+    message: 'Are you sure you want to delete this item?',
+    confirmText: 'Delete',
+    confirmColor: const Color.fromARGB(255, 229, 106, 98),
+    icon: Icons.delete,
+    onConfirm: () {
+      print('Item deleted');
+    },
+  );
               },
-              child: const Icon(Icons.delete, color: Color.fromARGB(255, 133, 21, 13)),
+              child: Icon(
+  Icons.delete,
+  color: Theme.of(context).colorScheme.tertiary,
+),
             ),
           ),
 
@@ -81,13 +78,25 @@ class EditProductCard extends StatelessWidget {
                   crossAxisAlignment: CrossAxisAlignment.start,
                   children: [
                     Text(title,
-                        style: const TextStyle(fontWeight: FontWeight.bold)),
+                        style: TextStyle(fontWeight: FontWeight.bold,
+                        color: Theme.of(context).textTheme.bodyMedium?.color,)),
 
                     Text("$price \$",
                         style: const TextStyle(color: Colors.green)),
 
-                    Text("size $size"),
-                    Text("color $color"),
+                    Text(
+  "size $size",
+  style: TextStyle(
+    color: Theme.of(context).textTheme.bodySmall?.color,
+  ),
+),
+
+Text(
+  "color $color",
+  style: TextStyle(
+    color: Theme.of(context).textTheme.bodySmall?.color,
+  ),
+),
 
                     const SizedBox(height: 10),
 
@@ -97,23 +106,38 @@ class EditProductCard extends StatelessWidget {
 
                         GestureDetector(
                           onTap: onRemove,
-                          child: const CircleAvatar(
-                            radius: 12,
-                            child: Icon(Icons.remove, size: 16),
-                          ),
+                          child: CircleAvatar(
+  radius: 12,
+  backgroundColor: Theme.of(context).secondaryHeaderColor,
+  child: Icon(
+    Icons.remove,
+    size: 16,
+    color: Theme.of(context).textTheme.bodyMedium?.color,
+  ),
+),
                         ),
 
                         Padding(
                           padding: const EdgeInsets.symmetric(horizontal: 8),
-                          child: Text(qty.toString()),
+                          child: Text(
+  qty.toString(),
+  style: TextStyle(
+    color: Theme.of(context).textTheme.bodyMedium?.color,
+  ),
+),
                         ),
 
                         GestureDetector(
                           onTap: onAdd,
-                          child: const CircleAvatar(
-                            radius: 12,
-                            child: Icon(Icons.add, size: 16),
-                          ),
+                          child:CircleAvatar(
+  radius: 12,
+  backgroundColor: Theme.of(context).secondaryHeaderColor,
+  child: Icon(
+    Icons.add,
+    size: 16,
+    color: Theme.of(context).textTheme.bodyMedium?.color,
+  ),
+),
                         ),
                       ],
                     )

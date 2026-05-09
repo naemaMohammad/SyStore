@@ -13,16 +13,43 @@ class Editorder extends StatelessWidget {
     final controller = Get.find<EditOrderController>();
 
     return  Scaffold(
-      backgroundColor: Colors.white,//Theme.of(context).scafolbacground
+      backgroundColor: Theme.of(context).scaffoldBackgroundColor,//Theme.of(context).scafolbacground
       appBar: AppBar(
-        title: const Text(
-          "My Cart",
-          style: TextStyle(fontSize: 30, fontWeight: FontWeight.bold),
+        backgroundColor: Theme.of(context).scaffoldBackgroundColor,
+        toolbarHeight: 66,
+        elevation: 0,
+        scrolledUnderElevation: 0,
+        leading: IconButton(
+          icon: Icon(
+            Icons.arrow_back_ios_new,
+            color: Theme.of(context).textTheme.bodyMedium?.color,
+          ),
+          onPressed: () => Navigator.pop(context),
         ),
-        elevation: 5,
-        shadowColor: Colors.black,
-        toolbarHeight: 70,
-        backgroundColor: Colors.white,
+        title: Text(
+          'My Cart',
+          style: TextStyle(
+            fontFamily: 'Raleway',
+            fontFamilyFallback: ['Cairo'],
+            fontWeight: FontWeight.w700,
+            fontSize: 23,
+            color: Theme.of(context).textTheme.bodyMedium?.color,
+          ),
+        ),
+        bottom: PreferredSize(
+          preferredSize: const Size.fromHeight(6),
+          child: Container(
+            height: 1,
+            decoration: BoxDecoration(
+              boxShadow: [
+                BoxShadow(
+  color: Theme.of(context).dividerColor.withOpacity(0.3),
+  blurRadius: 1,
+),
+              ],
+            ),
+          ),
+        ),
       ),
 
       body: Obx(() => ListView.builder(
@@ -48,14 +75,14 @@ class Editorder extends StatelessWidget {
     bottomNavigationBar: Obx(() => Container(
   padding: const EdgeInsets.all(16),
   decoration: BoxDecoration(
-    color: Colors.white,
+    color: Theme.of(context).cardColor,
     borderRadius: const BorderRadius.vertical(
       top: Radius.circular(20),
     ),
     boxShadow: [
       BoxShadow(
         // ignore: deprecated_member_use
-        color: Colors.black.withOpacity(0.05),
+        color: Theme.of(context).shadowColor.withOpacity(0.1),
         blurRadius: 10,
         offset: const Offset(0, -2),
       ),
@@ -66,19 +93,24 @@ class Editorder extends StatelessWidget {
     children: [
 
       // Total
-      _row("Total", "${controller.total} \$"),
+      _row(context, "Total", "${controller.total} \$"),
 
       const SizedBox(height: 8),
 
-      _row("Delivery", "2 \$"),
+      _row(context, "Delivery", "2 \$"),
 
-      const Divider(height: 20),
-      
+
+
+Divider(
+  height: 20,
+  color: Theme.of(context).dividerColor,
+),      
       _row(
-        "Sub Total",
-        "${controller.total + 2} \$",
-        isBold: true,
-      ),
+  context,
+  "Sub Total",
+  "${controller.total + 2} \$",
+  isBold: true,
+),
 
       const SizedBox(height: 15),
 
@@ -99,8 +131,13 @@ class Editorder extends StatelessWidget {
 )),
     );
   }
-
-}Widget _row(String title, String value, {bool isBold = false}) {
+}
+Widget _row(
+  BuildContext context,
+  String title,
+  String value, {
+  bool isBold = false,
+}) {
   return Row(
     mainAxisAlignment: MainAxisAlignment.spaceBetween,
     children: [
@@ -110,6 +147,7 @@ class Editorder extends StatelessWidget {
           fontSize: 16,
           fontWeight:
               isBold ? FontWeight.bold : FontWeight.normal,
+              color: Theme.of(context).textTheme.bodyMedium?.color,
         ),
       ),
       Text(
@@ -118,6 +156,7 @@ class Editorder extends StatelessWidget {
           fontSize: 16,
           fontWeight:
               isBold ? FontWeight.bold : FontWeight.normal,
+              color: Theme.of(context).textTheme.bodyMedium?.color,
         ),
       ),
     ],

@@ -7,33 +7,47 @@ class CartSummary extends StatelessWidget {
   Widget build(BuildContext context) {
     return Container(
       padding: const EdgeInsets.all(16),
+
       decoration: BoxDecoration(
-        color: Colors.white,
+        color: Theme.of(context).cardColor,
+
         boxShadow: [
           BoxShadow(
-            color: Colors.black.withOpacity(0.05),
+            color: Theme.of(context).shadowColor.withOpacity(0.1),
             blurRadius: 10,
             offset: const Offset(0, -2),
           ),
         ],
+
         borderRadius: const BorderRadius.vertical(
           top: Radius.circular(20),
         ),
       ),
+
       child: Column(
         mainAxisSize: MainAxisSize.min,
         children: [
-          _row("Total", "154 \$"),
+          _row(context, "Total", "154 \$"),
           const SizedBox(height: 8),
-          _row("Delivery", "2 \$"),
-          const Divider(height: 20),
-          _row("Sub Total", "156 \$", isBold: true),
+          _row(context, "Delivery", "2 \$"),
+
+          Divider(
+            height: 20,
+            color: Theme.of(context).dividerColor,
+          ),
+
+          _row(context, "Sub Total", "156 \$", isBold: true),
         ],
       ),
     );
   }
 
-  Widget _row(String title, String value, {bool isBold = false}) {
+  Widget _row(
+    BuildContext context,
+    String title,
+    String value, {
+    bool isBold = false,
+  }) {
     return Row(
       mainAxisAlignment: MainAxisAlignment.spaceBetween,
       children: [
@@ -42,6 +56,7 @@ class CartSummary extends StatelessWidget {
           style: TextStyle(
             fontSize: 16,
             fontWeight: isBold ? FontWeight.bold : FontWeight.normal,
+            color: Theme.of(context).textTheme.bodyMedium?.color,
           ),
         ),
         Text(
@@ -49,6 +64,7 @@ class CartSummary extends StatelessWidget {
           style: TextStyle(
             fontSize: 16,
             fontWeight: isBold ? FontWeight.bold : FontWeight.normal,
+            color: Theme.of(context).textTheme.bodyMedium?.color,
           ),
         ),
       ],
