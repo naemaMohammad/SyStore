@@ -84,9 +84,7 @@ class Order extends StatelessWidget {
           decoration: BoxDecoration(
             color: Theme.of(context).cardColor,
 
-            borderRadius: const BorderRadius.vertical(
-              top: Radius.circular(20),
-            ),
+            borderRadius: const BorderRadius.vertical(top: Radius.circular(20)),
 
             boxShadow: [
               BoxShadow(
@@ -104,10 +102,7 @@ class Order extends StatelessWidget {
               const SizedBox(height: 8),
               _row(context, "Delivery", "2 \$"),
 
-              Divider(
-                height: 20,
-                color: Theme.of(context).dividerColor,
-              ),
+              Divider(height: 20, color: Theme.of(context).dividerColor),
 
               _row(
                 context,
@@ -126,8 +121,7 @@ class Order extends StatelessWidget {
                   },
                   style: ElevatedButton.styleFrom(
                     padding: const EdgeInsets.symmetric(vertical: 14),
-                    backgroundColor:
-                        Theme.of(context).colorScheme.primary,
+                    backgroundColor: Theme.of(context).colorScheme.primary,
                     foregroundColor: Colors.white,
                   ),
                   child: const Text("Send The Request"),
@@ -153,8 +147,7 @@ class Order extends StatelessWidget {
           "$title :",
           style: TextStyle(
             fontSize: 16,
-            fontWeight:
-                isBold ? FontWeight.bold : FontWeight.normal,
+            fontWeight: isBold ? FontWeight.bold : FontWeight.normal,
             color: Theme.of(context).textTheme.bodyMedium?.color,
           ),
         ),
@@ -162,8 +155,7 @@ class Order extends StatelessWidget {
           value,
           style: TextStyle(
             fontSize: 16,
-            fontWeight:
-                isBold ? FontWeight.bold : FontWeight.normal,
+            fontWeight: isBold ? FontWeight.bold : FontWeight.normal,
             color: Theme.of(context).textTheme.bodyMedium?.color,
           ),
         ),

@@ -19,9 +19,7 @@ class CartSummary extends StatelessWidget {
           ),
         ],
 
-        borderRadius: const BorderRadius.vertical(
-          top: Radius.circular(20),
-        ),
+        borderRadius: const BorderRadius.vertical(top: Radius.circular(20)),
       ),
 
       child: Column(
@@ -31,10 +29,7 @@ class CartSummary extends StatelessWidget {
           const SizedBox(height: 8),
           _row(context, "Delivery", "2 \$"),
 
-          Divider(
-            height: 20,
-            color: Theme.of(context).dividerColor,
-          ),
+          Divider(height: 20, color: Theme.of(context).dividerColor),
 
           _row(context, "Sub Total", "156 \$", isBold: true),
         ],

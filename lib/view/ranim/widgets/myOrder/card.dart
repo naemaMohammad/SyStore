@@ -54,10 +54,7 @@ class OrderCard extends StatelessWidget {
       decoration: BoxDecoration(
         color: Theme.of(context).cardColor,
         borderRadius: BorderRadius.circular(15),
-        border: Border.all(
-          color: Theme.of(context).dividerColor,
-          width: 0.2,
-        ),
+        border: Border.all(color: Theme.of(context).dividerColor, width: 0.2),
         boxShadow: [
           BoxShadow(
             color: Theme.of(context).shadowColor.withOpacity(0.1),

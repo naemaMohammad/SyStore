@@ -1,7 +1,6 @@
 import 'package:get/get.dart';
 
 class Showmycartcontroller extends GetxController {
-
   var products = [
     {
       "image": "assets/images/photo_2026-05-09_17-04-30.jpg",
@@ -25,5 +24,4 @@ class Showmycartcontroller extends GetxController {
       "color": "pink",
     },
   ].obs;
-
 }

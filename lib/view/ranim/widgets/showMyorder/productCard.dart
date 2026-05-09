@@ -30,10 +30,7 @@ class ProductCard extends StatelessWidget {
         borderRadius: BorderRadius.circular(16),
 
         border: isSelected
-            ? Border.all(
-                color: Theme.of(context).colorScheme.primary,
-                width: 2,
-              )
+            ? Border.all(color: Theme.of(context).colorScheme.primary, width: 2)
             : Border.all(
                 color: Theme.of(context).dividerColor.withOpacity(0.3),
                 width: 0.5,

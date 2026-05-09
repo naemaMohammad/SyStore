@@ -1,7 +1,6 @@
 import 'package:get/get.dart';
 
 class EditOrderController extends GetxController {
-
   var products = [
     {
       "image": "assets/images/photo_2026-05-09_17-04-30.jpg",
@@ -22,8 +21,7 @@ class EditOrderController extends GetxController {
   ].obs;
 
   void increaseQty(int index) {
-    products[index]["qty"] =
-        (products[index]["qty"] as int) + 1;
+    products[index]["qty"] = (products[index]["qty"] as int) + 1;
     products.refresh();
   }
 

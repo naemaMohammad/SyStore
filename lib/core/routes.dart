@@ -8,7 +8,6 @@ import 'package:user_app/view/ranim/screen/editOrder.dart';
 
 import '../view/ranim/screen/order.dart';
 
-
 class AppPages {
   static final pages = [
     GetPage(

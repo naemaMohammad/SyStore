@@ -22,20 +22,17 @@ class OrdersController extends GetxController {
     }
   }
 
-
   var selectedFilter = "All".obs;
 
-List<Order> get filteredOrders {
-  if (selectedFilter.value == "All") return orders;
+  List<Order> get filteredOrders {
+    if (selectedFilter.value == "All") return orders;
 
-  return orders
-      .where((o) => o.status == selectedFilter.value)
-      .toList();
-}
+    return orders.where((o) => o.status == selectedFilter.value).toList();
+  }
 
-void changeFilter(String filter) {
-  selectedFilter.value = filter;
-}
+  void changeFilter(String filter) {
+    selectedFilter.value = filter;
+  }
 }
 
 class OrderService {

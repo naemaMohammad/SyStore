@@ -22,9 +22,7 @@ void showOrderBottomSheet(BuildContext context) {
             Positioned.fill(
               child: BackdropFilter(
                 filter: ImageFilter.blur(sigmaX: 6, sigmaY: 6),
-                child: Container(
-                  color: Colors.black.withOpacity(0.2),
-                ),
+                child: Container(color: Colors.black.withOpacity(0.2)),
               ),
             ),
 
@@ -51,7 +49,6 @@ void showOrderBottomSheet(BuildContext context) {
                     mainAxisSize: MainAxisSize.min,
                     crossAxisAlignment: CrossAxisAlignment.start,
                     children: [
-
                       /// handle
                       Center(
                         child: Container(
@@ -70,18 +67,19 @@ void showOrderBottomSheet(BuildContext context) {
                         style: TextStyle(
                           fontSize: 26,
                           fontWeight: FontWeight.bold,
-                          color: Theme.of(context)
-                              .textTheme
-                              .bodyMedium
-                              ?.color,
+                          color: Theme.of(context).textTheme.bodyMedium?.color,
                         ),
                       ),
 
                       const SizedBox(height: 20),
 
                       /// Number
-                      _buildField(context, numberController, "Number",
-                          TextInputType.number),
+                      _buildField(
+                        context,
+                        numberController,
+                        "Number",
+                        TextInputType.number,
+                      ),
 
                       const SizedBox(height: 15),
 
@@ -91,9 +89,7 @@ void showOrderBottomSheet(BuildContext context) {
                       const SizedBox(height: 15),
 
                       /// Notes
-                      _buildField(context, notesController,
-                          "Add your notes",
-                        ),
+                      _buildField(context, notesController, "Add your notes"),
 
                       const SizedBox(height: 20),
 
@@ -111,15 +107,15 @@ void showOrderBottomSheet(BuildContext context) {
                               btnOkOnPress: () {
                                 Navigator.pop(context);
                               },
-                              btnOkColor:
-                                  Theme.of(context).colorScheme.primary,
+                              btnOkColor: Theme.of(context).colorScheme.primary,
                               dismissOnTouchOutside: false,
                             ).show();
                           },
 
                           style: ElevatedButton.styleFrom(
-                            backgroundColor:
-                                Theme.of(context).colorScheme.primary,
+                            backgroundColor: Theme.of(
+                              context,
+                            ).colorScheme.primary,
                             foregroundColor: Colors.white,
                           ),
 
@@ -136,8 +132,7 @@ void showOrderBottomSheet(BuildContext context) {
       );
     },
 
-    transitionBuilder:
-        (context, animation, secondaryAnimation, child) {
+    transitionBuilder: (context, animation, secondaryAnimation, child) {
       return SlideTransition(
         position: Tween(
           begin: const Offset(0, 1),
@@ -161,14 +156,10 @@ Widget _buildField(
     controller: controller,
     keyboardType: keyboardType,
     maxLines: maxLines,
-    style: TextStyle(
-      color: Theme.of(context).textTheme.bodyMedium?.color,
-    ),
+    style: TextStyle(color: Theme.of(context).textTheme.bodyMedium?.color),
     decoration: InputDecoration(
       hintText: hint,
-      hintStyle: TextStyle(
-        color: Theme.of(context).textTheme.bodySmall?.color,
-      ),
+      hintStyle: TextStyle(color: Theme.of(context).textTheme.bodySmall?.color),
       filled: true,
       fillColor: Theme.of(context).secondaryHeaderColor,
       border: OutlineInputBorder(
