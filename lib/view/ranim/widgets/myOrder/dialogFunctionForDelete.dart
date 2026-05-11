@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:get/get.dart';
 
 void showAppDialog({
   required BuildContext context,
@@ -63,7 +64,7 @@ void showAppDialog({
                             ),
                             alignment: Alignment.center,
                             child: Text(
-                              'cancel',
+                              '15'.tr,
                               style: TextStyle(
                                 color: Theme.of(
                                   context,

@@ -25,6 +25,7 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:get_storage/get_storage.dart';
+import 'package:user_app/core/localization/translation.dart';
 import 'package:user_app/core/routes.dart';
 import 'package:user_app/core/theme/theme.dart';
 
@@ -59,8 +60,8 @@ class MyApp extends StatelessWidget {
       theme: AppTheme.light(),
       darkTheme: AppTheme.dark(),
       themeMode: themeMode,
-      //translations: MyTranslation(),
-      locale: locale,
+       translations: TranslationCore(), // مهم جدا
+      locale: Get.deviceLocale,// اللغة الحالية
       fallbackLocale: const Locale('en'),
       builder: (context, child) {
         return Directionality(
@@ -70,7 +71,7 @@ class MyApp extends StatelessWidget {
           child: child!,
         );
       },
-      initialRoute: '/orders',
+      initialRoute: '/orderproduct',
       getPages: AppPages.pages,
     );
   }

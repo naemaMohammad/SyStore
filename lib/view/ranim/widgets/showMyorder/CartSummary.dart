@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:get/get_utils/src/extensions/internacionalization.dart';
 
 class CartSummary extends StatelessWidget {
   const CartSummary({super.key});
@@ -25,13 +26,13 @@ class CartSummary extends StatelessWidget {
       child: Column(
         mainAxisSize: MainAxisSize.min,
         children: [
-          _row(context, "Total", "154 \$"),
+          _row(context, "2".tr, "154 \$"),
           const SizedBox(height: 8),
-          _row(context, "Delivery", "2 \$"),
+          _row(context, "3".tr, "2 \$"),
 
           Divider(height: 20, color: Theme.of(context).dividerColor),
 
-          _row(context, "Sub Total", "156 \$", isBold: true),
+          _row(context, "4".tr, "156 \$", isBold: true),
         ],
       ),
     );

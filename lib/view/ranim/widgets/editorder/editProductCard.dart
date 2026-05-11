@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:get/utils.dart';
 import 'package:user_app/view/ranim/widgets/myOrder/dialogFunctionForDelete.dart';
 
 class EditProductCard extends StatelessWidget {
@@ -49,8 +50,8 @@ class EditProductCard extends StatelessWidget {
                 showAppDialog(
                   context: context,
                   title: '',
-                  message: 'Are you sure you want to delete this item?',
-                  confirmText: 'Delete',
+                  message: '8'.tr,
+                  confirmText: '9'.tr,
                   confirmColor: const Color.fromARGB(255, 229, 106, 98),
                   icon: Icons.delete,
                   onConfirm: () {

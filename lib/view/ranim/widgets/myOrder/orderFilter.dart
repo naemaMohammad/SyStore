@@ -13,12 +13,12 @@ class _OrderFiltersState extends State<OrderFilters> {
   final controller = Get.find<OrdersController>();
 
   final List<String> filters = [
-    "All",
-    "Process",
-    "Preparing",
-    "On the way",
-    "Delivered",
-    "Cancelled",
+    "16".tr,
+    "17".tr,
+    "18".tr,
+    "19".tr,
+    "20".tr,
+    "14".tr,
   ];
 
   @override

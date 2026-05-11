@@ -29,7 +29,7 @@ class Order extends StatelessWidget {
         ),
 
         title: Text(
-          'My Cart',
+          '1'.tr,
           style: TextStyle(
             fontFamily: 'Raleway',
             fontFamilyFallback: ['Cairo'],
@@ -98,15 +98,15 @@ class Order extends StatelessWidget {
           child: Column(
             mainAxisSize: MainAxisSize.min,
             children: [
-              _row(context, "Total", "${controller.total} \$"),
+              _row(context, "2".tr, "${controller.total} \$"),
               const SizedBox(height: 8),
-              _row(context, "Delivery", "2 \$"),
+              _row(context, "3".tr, "2 \$"),
 
               Divider(height: 20, color: Theme.of(context).dividerColor),
 
               _row(
                 context,
-                "Sub Total",
+                "4".tr,
                 "${controller.total + 2} \$",
                 isBold: true,
               ),
@@ -124,7 +124,7 @@ class Order extends StatelessWidget {
                     backgroundColor: Theme.of(context).colorScheme.primary,
                     foregroundColor: Colors.white,
                   ),
-                  child: const Text("Send The Request"),
+                  child:  Text("21".tr),
                 ),
               ),
             ],

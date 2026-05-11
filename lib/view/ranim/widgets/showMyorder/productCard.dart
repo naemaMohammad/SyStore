@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:get/get_utils/src/extensions/internacionalization.dart';
 
 class ProductCard extends StatelessWidget {
   final String image;
@@ -90,14 +91,14 @@ class ProductCard extends StatelessWidget {
                 const SizedBox(height: 6),
 
                 Text(
-                  "size $size",
+                  "${'27'.tr} $size",
                   style: TextStyle(
                     color: Theme.of(context).textTheme.bodySmall?.color,
                   ),
                 ),
 
                 Text(
-                  "color $color",
+                  "${'28'.tr} $color",
                   style: TextStyle(
                     color: Theme.of(context).textTheme.bodySmall?.color,
                   ),

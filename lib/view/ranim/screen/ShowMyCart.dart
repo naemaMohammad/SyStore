@@ -29,7 +29,7 @@ class Showmycart extends StatelessWidget {
         ),
 
         title: Text(
-          'My Cart',
+          '1'.tr,
           style: TextStyle(
             fontFamily: 'Raleway',
             fontFamilyFallback: ['Cairo'],

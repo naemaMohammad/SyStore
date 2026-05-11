@@ -68,6 +68,7 @@ class OrderCard extends StatelessWidget {
         children: [
           CircleAvatar(
             radius: 25,
+            // ignore: deprecated_member_use
             backgroundColor: color.withOpacity(0.15),
             child: Icon(icon, color: color, size: 35),
           ),
@@ -79,7 +80,7 @@ class OrderCard extends StatelessWidget {
               crossAxisAlignment: CrossAxisAlignment.start,
               children: [
                 Text(
-                  "Order #$orderId",
+                  "${'11'.tr} #$orderId",
                   style: TextStyle(
                     fontWeight: FontWeight.bold,
                     color: Theme.of(context).textTheme.bodyMedium?.color,
@@ -88,21 +89,21 @@ class OrderCard extends StatelessWidget {
                 const SizedBox(height: 4),
 
                 Text(
-                  "order date $date",
+                  "${'12'.tr} $date",
                   style: TextStyle(
                     color: Theme.of(context).textTheme.bodySmall?.color,
                   ),
                 ),
 
                 Text(
-                  "total $total \$",
+                  "${'2'.tr} $total \$",
                   style: TextStyle(
                     color: Theme.of(context).textTheme.bodySmall?.color,
                   ),
                 ),
 
                 Text(
-                  "status $status",
+                  "${'13'.tr} $status",
                   style: TextStyle(
                     color: Theme.of(context).textTheme.bodySmall?.color,
                   ),
@@ -140,8 +141,8 @@ class OrderCard extends StatelessWidget {
               showAppDialog(
                 context: context,
                 title: '',
-                message: 'Are you sure you want to delete this item?',
-                confirmText: 'Delete',
+                message: '8'.tr,
+                confirmText: '9'.tr,
                 confirmColor: Theme.of(context).colorScheme.tertiary,
                 icon: Icons.delete,
                 onConfirm: () {
@@ -181,7 +182,7 @@ class OrderCard extends StatelessWidget {
             context: context,
             dialogType: DialogType.error,
             animType: AnimType.bottomSlide,
-            title: 'Cancelled',
+            title: '14'.tr,
             desc: 'there are no captain',
             btnOkOnPress: () {},
             btnOkColor: Theme.of(context).colorScheme.primary,

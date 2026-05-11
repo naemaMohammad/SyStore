@@ -28,7 +28,7 @@ class Editorder extends StatelessWidget {
           onPressed: () => Navigator.pop(context),
         ),
         title: Text(
-          'My Cart',
+          '1'.tr,
           style: TextStyle(
             fontFamily: 'Raleway',
             fontFamilyFallback: ['Cairo'],
@@ -94,16 +94,16 @@ class Editorder extends StatelessWidget {
             mainAxisSize: MainAxisSize.min,
             children: [
               // Total
-              _row(context, "Total", "${controller.total} \$"),
+              _row(context, "2".tr, "${controller.total} \$"),
 
               const SizedBox(height: 8),
 
-              _row(context, "Delivery", "2 \$"),
+              _row(context, "3".tr, "2 \$"),
 
               Divider(height: 20, color: Theme.of(context).dividerColor),
               _row(
                 context,
-                "Sub Total",
+                "4".tr,
                 "${controller.total + 2} \$",
                 isBold: true,
               ),
@@ -118,8 +118,8 @@ class Editorder extends StatelessWidget {
                       context: context,
                       dialogType: DialogType.success,
                       animType: AnimType.bottomSlide,
-                      title: 'Done!',
-                      desc: 'Your order was edited',
+                      title: '5'.tr,
+                      desc: '6'.tr,
                       btnOkOnPress: () {
                         Navigator.pop(context);
                       },
@@ -130,7 +130,7 @@ class Editorder extends StatelessWidget {
                   style: ElevatedButton.styleFrom(
                     padding: const EdgeInsets.symmetric(vertical: 14),
                   ),
-                  child: const Text("Save Changes"),
+                  child:  Text("7".tr),
                 ),
               ),
             ],

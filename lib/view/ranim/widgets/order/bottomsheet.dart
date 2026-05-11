@@ -1,6 +1,7 @@
 import 'dart:ui';
 import 'package:awesome_dialog/awesome_dialog.dart';
 import 'package:flutter/material.dart';
+import 'package:get/get.dart';
 
 void showOrderBottomSheet(BuildContext context) {
   final numberController = TextEditingController();
@@ -63,7 +64,7 @@ void showOrderBottomSheet(BuildContext context) {
                       ),
 
                       Text(
-                        "Order Information",
+                        "22".tr,
                         style: TextStyle(
                           fontSize: 26,
                           fontWeight: FontWeight.bold,
@@ -77,19 +78,19 @@ void showOrderBottomSheet(BuildContext context) {
                       _buildField(
                         context,
                         numberController,
-                        "Number",
+                        "23".tr,
                         TextInputType.number,
                       ),
 
                       const SizedBox(height: 15),
 
                       /// Address
-                      _buildField(context, addressController, "Address"),
+                      _buildField(context, addressController, "24".tr),
 
                       const SizedBox(height: 15),
 
                       /// Notes
-                      _buildField(context, notesController, "Add your notes"),
+                      _buildField(context, notesController, "25".tr),
 
                       const SizedBox(height: 20),
 
@@ -102,8 +103,8 @@ void showOrderBottomSheet(BuildContext context) {
                               context: context,
                               dialogType: DialogType.success,
                               animType: AnimType.bottomSlide,
-                              title: 'Done!',
-                              desc: 'Thank you for your order',
+                              title: '5'.tr,
+                              desc: '26'.tr,
                               btnOkOnPress: () {
                                 Navigator.pop(context);
                               },
@@ -119,7 +120,7 @@ void showOrderBottomSheet(BuildContext context) {
                             foregroundColor: Colors.white,
                           ),
 
-                          child: const Text("Done"),
+                          child:  Text("5".tr),
                         ),
                       ),
                     ],

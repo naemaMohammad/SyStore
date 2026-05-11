@@ -1,0 +1,77 @@
+import 'package:get/get.dart';
+
+class TranslationCore implements Translations {
+  @override
+  Map<String, Map<String, String>> get keys => {
+    
+    "en":
+    {
+      "1":"My Cart",
+      "2":"Total",
+      "3":"Delivery",
+      "4":"Sub Total",
+      "5":"Done!",
+      "6":"Your order was edited",
+      "7":"Save Changes",
+      "8":"Are you sure you want to delete this item?",
+      "9":"Delete",
+      "10":"My Order",
+      "11":"Order",
+      "12":"order date",
+      "13":"status",
+      "14":"Cancelled",
+      "15":"cancel",
+      "16":"All",
+      "17":"Process",
+      "18":"Preparing",
+      "19":"On the way",
+      "20":"Delivered",
+      "21":"Send The Request",
+      "22":"Order Information",
+      "23":"Number",
+      "24":"Address",
+      "25":"Add your notes",
+      "26":"Thank you for your order",
+      "27":"size",
+      "28":"color",
+      "29":"",
+      "30":"",
+      "31":"",
+    },
+    "ar":
+    {
+      "1":"سلتي",
+      "2":"المجموع",
+      "3":"التوصيل",
+      "4":"الحساب",
+      "5":" ! تم ",
+      "6":"تم تعديل طلبك",
+      "7":"حفظ التعديلات ",
+      "8":"هل انت متاكد انك تريد حذف هذا المنتج؟",
+      "9":"حذف",
+      "10":"طلباتي",
+      "11":"الطلب",
+      "12":"تاريخ الطلب",
+      "13":"حالة الطلب",
+      "14":"تم الغاؤه",
+      "15":"الغاء",
+      "16":"الكل",
+      "17":"قيد المعالجة",
+      "18":"قيد التحضير",
+      "19":"جاري التوصيل",
+      "20":"تم التوصيل",
+      "21":"ارسال الطلب",
+      "22":"معلومات الطلب",
+      "23":"الرقم",
+      "24":"العنوان",
+      "25":"ادخل ملاحظاتك",
+      "26":"شكرا لطلبك ",
+      "27":"القياس",
+      "28":"اللون",
+      "29":"",
+      "30":"",
+      "31":"",
+    }
+    
+    };
+}
