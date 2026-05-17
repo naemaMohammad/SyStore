@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:get/get_utils/src/extensions/export.dart';
-import 'package:user_app/view/lana/settings.dart';
+import 'package:user_app/view/lana/settings/settings.dart';
 
 class ImageSlider extends StatefulWidget {
   const ImageSlider({super.key});
@@ -14,9 +14,9 @@ class _ImageSliderState extends State<ImageSlider> {
   int currentPage = 0;
 
   final List<String> images = [
+    'assets/images/hello1.jpg',
     'assets/images/hello2.jpg',
     'assets/images/hello3.jpg',
-    'assets/images/hello4.jpg',
   ];
 
   final List<String> texts = ['hello1'.tr, 'hello2'.tr, 'hello3'.tr];

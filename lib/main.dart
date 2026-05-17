@@ -4,7 +4,7 @@ import 'package:get_storage/get_storage.dart';
 
 import 'package:user_app/core/localization/translation.dart';
 import 'package:user_app/core/theme/theme.dart';
-import 'package:user_app/view/lana/start.dart';
+import 'package:user_app/view/lana/hello/start.dart';
 
 void main() async {
   WidgetsFlutterBinding.ensureInitialized();

@@ -1,8 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:get/get.dart';
-import 'package:user_app/view/lana/hello.dart';
-import 'package:user_app/view/lana/settings.dart';
+import 'package:user_app/view/lana/hello/hello.dart';
+import 'package:user_app/view/lana/settings/settings.dart';
 
 class CodeScreen extends StatefulWidget {
   final String title;

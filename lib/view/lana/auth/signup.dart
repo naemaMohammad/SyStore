@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
-import 'package:user_app/view/lana/verification.dart';
+import 'package:user_app/view/lana/auth/verification.dart';
 
 class SignUp extends StatefulWidget {
   const SignUp({super.key});

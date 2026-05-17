@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
-import 'package:user_app/view/lana/login.dart';
-import 'package:user_app/view/lana/signup.dart';
+import 'package:user_app/view/lana/auth/login.dart';
+import 'package:user_app/view/lana/auth/signup.dart';
 
 class Start extends StatelessWidget {
   const Start({super.key});
