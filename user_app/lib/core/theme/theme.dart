@@ -1,6 +1,4 @@
 import 'package:flutter/material.dart';
-import 'package:get/get_core/src/get_main.dart';
-import 'package:get/get_utils/src/extensions/internacionalization.dart';
 import 'package:user_app/core/theme/color.dart';
 
 class AppTheme {
@@ -47,31 +45,9 @@ class AppTheme {
       ),
 
       appBarTheme: const AppBarTheme(
-        backgroundColor: AppColors.primary,
+        backgroundColor: Colors.black,
         foregroundColor: Colors.white,
       ),
-      cardColor: AppColors.backgroundSecondaryDarkHome,
-       dividerColor: Colors.white12,
-       canvasColor: AppColors.backgroundSecondaryDarkHome,
     );
-
-  }
-}
-class AppFonts {
-
-  // للعناوين
-  static String heading() {
-
-    return Get.locale?.languageCode == 'ar'
-        ? 'Tajawal'
-        : 'Raleway';
-  }
-
-  // للنصوص العادية
-  static String body() {
-
-    return Get.locale?.languageCode == 'ar'
-        ? 'Cairo'
-        : 'NunitoSans';
   }
 }
