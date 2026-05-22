@@ -1,17 +1,26 @@
-# user_app
+# SyStore
 
-A new Flutter project.
+SyStore is a modern multi-platform fashion commerce system built to simplify the connection between clothing stores and customers.
 
-## Getting Started
+The project includes two Flutter applications (User App & Store Owner App), a Laravel backend API, and an admin dashboard for managing products, orders, and stores.
 
-This project is a starting point for a Flutter application.
+The platform allows store owners to manage their inventory, product variants, colors, sizes, and orders easily, while customers can browse products, filter by category, size, color, and enjoy a smooth shopping experience.
 
-A few resources to get you started if this is your first Flutter project:
+## Technologies Used
+- Flutter
+- GetX
+- Laravel API
+- React Dashboard
+- REST API
+- Firebase & Local Storage
 
-- [Learn Flutter](https://docs.flutter.dev/get-started/learn-flutter)
-- [Write your first Flutter app](https://docs.flutter.dev/get-started/codelab)
-- [Flutter learning resources](https://docs.flutter.dev/reference/learning-resources)
+## Main Features
+- Multi-store support
+- Product variants (colors & sizes)
+- Advanced product filtering
+- Dark / Light mode
+- Arabic & English localization
+- Order management system
+- Responsive admin dashboard
 
-For help getting started with Flutter development, view the
-[online documentation](https://docs.flutter.dev/), which offers tutorials,
-samples, guidance on mobile development, and a full API reference.
+This project is structured as a monorepo where all components work together to provide a complete e-commerce solution.
