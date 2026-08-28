@@ -58,11 +58,15 @@ class AppTheme{
 
 class AppFonts{
   static String heading(){
-    return Get.locale?.languageCode =='ar' ? 'Tajawal' : 'Raleway' ;
+    return Get.locale?.languageCode =='ar' ? 
+    
+    'Tajawal' : 'Raleway' ;
   }
 
  static String  body (){
-  return Get.locale?.languageCode == 'ar' ? 'Cairo' : 'NunitoSans';
+  return Get.locale?.languageCode == 'ar' ? 
+  
+  'Cairo' : 'NunitoSans';
  }
 
 }
