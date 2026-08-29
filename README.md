@@ -1,4 +1,4 @@
-# 🛍️ SyStore
+# 🛍️ STORIA
 
 <p align="center">
   <strong>A Multi-Vendor E-Commerce Marketplace Ecosystem</strong>
@@ -10,7 +10,7 @@
 
 ## 📌 Overview
 
-**SyStore** is a multi-vendor e-commerce marketplace designed to connect customers, merchants, and platform administrators through a unified digital commerce ecosystem.
+**STORIA** is a multi-vendor e-commerce marketplace designed to connect customers, merchants, and platform administrators through a unified digital commerce ecosystem.
 
 The platform is built around three primary actors:
 
@@ -270,7 +270,7 @@ The merchant environment integrates notification services to communicate importa
 
 # 🛡️ Super Admin / Control System
 
-SyStore also introduces a centralized administrative layer.
+STORIA also introduces a centralized administrative layer.
 
 The Super Admin is responsible for controlling the marketplace itself.
 
@@ -305,7 +305,7 @@ This creates a three-layer ecosystem:
 
 # 🏗️ System Architecture
 
-SyStore follows a layered application architecture where presentation, state management, networking, data models, and backend services have distinct responsibilities.
+STORIA follows a layered application architecture where presentation, state management, networking, data models, and backend services have distinct responsibilities.
 
 ```text
 ┌─────────────────────────────────────────────────────┐
@@ -584,7 +584,7 @@ Merchant
 The repository is organized as a multi-application project.
 
 ```text
-SyStore/
+STORIA/
 │
 ├── owner_app/
 │   ├── android/
@@ -765,7 +765,7 @@ One of the important domain challenges in a multi-vendor marketplace is:
 
 > What happens when products belong to different stores?
 
-SyStore addresses this through store-aware cart behavior.
+STORIA addresses this through store-aware cart behavior.
 
 The architecture considers:
 
@@ -964,7 +964,7 @@ This reduces coupling between unrelated parts of the system.
 
 # 📈 Scalability Considerations
 
-SyStore is designed around independent domains rather than a single monolithic UI implementation.
+STORIA is designed around independent domains rather than a single monolithic UI implementation.
 
 Major domains are separated into:
 
@@ -1222,7 +1222,7 @@ Centralized services and structured API communication reduce duplicated logic.
 
 # 🔬 Engineering Highlights
 
-SyStore is more than a collection of screens.
+STORIA is more than a collection of screens.
 
 The project demonstrates the implementation of a complete domain-oriented product ecosystem containing:
 
@@ -1329,7 +1329,7 @@ Before running the project, make sure the following are installed:
 ```bash
 git clone <REPOSITORY_URL>
 
-cd SyStore
+cd STORIA
 ```
 
 ---
@@ -1441,7 +1441,7 @@ The repository includes Flutter test infrastructure that can be extended as the 
 
 # 📊 Project Maturity
 
-SyStore demonstrates a complete application lifecycle rather than a simple UI prototype.
+STORIA demonstrates a complete application lifecycle rather than a simple UI prototype.
 
 The project includes:
 
@@ -1485,11 +1485,11 @@ Potential future improvements include:
 
 ---
 
-# 🧠 Why SyStore?
+# 🧠 Why STORIA?
 
 Traditional e-commerce applications often focus on a single store.
 
-**SyStore approaches the problem differently.**
+**STORIA approaches the problem differently.**
 
 It treats commerce as an ecosystem:
 
@@ -1588,7 +1588,7 @@ The system is conceptually built around three primary actors:
 
 # 📌 Important Note
 
-SyStore is a software engineering project intended to demonstrate the architecture and implementation of a multi-vendor commerce platform.
+STORIA is a software engineering project intended to demonstrate the architecture and implementation of a multi-vendor commerce platform.
 
 Production deployment should additionally include:
 
@@ -1605,7 +1605,7 @@ Production deployment should additionally include:
 
 # 💡 Final Perspective
 
-SyStore is designed around a simple idea:
+STORIA is designed around a simple idea:
 
 > **One platform. Multiple stores. One connected commerce ecosystem.**
 
@@ -1638,7 +1638,7 @@ to create a foundation for a scalable marketplace ecosystem.
 ---
 
 <p align="center">
-  <strong>SyStore</strong>
+  <strong>STORIA</strong>
   <br>
   <em>Connecting customers, merchants, and commerce through one platform.</em>
 </p>
