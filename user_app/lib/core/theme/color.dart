@@ -5,8 +5,8 @@ class AppColors {
   static const Color secondary = Color(0xFF38824B);
   static const Color third = Color(0xFFE57373);
 
-  static const Color backgroundLight = Color(0xFFFFFFFA);
-  static const Color backgroundDark = Color(0xFF121212);
+  static const Color backgroundLight = Color(0xFFFFFFFF);
+  static const Color backgroundDark = Color(0xFF1F1F1F);
   static const Color backgroundDarkHome =Color(0xFF0F0F10);
 
   static const Color textLight = Color(0xFF1C1C1E);
@@ -27,6 +27,6 @@ static const Color backgroundSecondaryDarkHome = Color(0xFF1A1A1D);
   static const grey = Color(0xFF9E9E9E);
   static const chip = Color(0xFFEDEDED);
   static const border = Color(0xFFE6E6E6);
-  static const price = Color(0xFF27AE60);
+  static const price = Color(0xFF38824B);
 
 }

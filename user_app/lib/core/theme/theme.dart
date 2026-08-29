@@ -51,27 +51,20 @@ class AppTheme {
         foregroundColor: Colors.white,
       ),
       cardColor: AppColors.backgroundSecondaryDarkHome,
-       dividerColor: Colors.white12,
-       canvasColor: AppColors.backgroundSecondaryDarkHome,
+      dividerColor: Colors.white12,
+      canvasColor: AppColors.backgroundSecondaryDarkHome,
     );
-
   }
 }
-class AppFonts {
 
+class AppFonts {
   // للعناوين
   static String heading() {
-
-    return Get.locale?.languageCode == 'ar'
-        ? 'Tajawal'
-        : 'Raleway';
+    return Get.locale?.languageCode == 'ar' ? 'Cairo' : 'Raleway';
   }
 
   // للنصوص العادية
   static String body() {
-
-    return Get.locale?.languageCode == 'ar'
-        ? 'Cairo'
-        : 'NunitoSans';
+    return Get.locale?.languageCode == 'ar' ? 'Tajawal' : 'NunitoSans';
   }
 }
