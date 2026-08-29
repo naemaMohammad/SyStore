@@ -1,94 +1,70 @@
-# 🛍️ SyStore — Multi-Vendor E-Commerce Ecosystem
+# 🛍️ SyStore
 
 <p align="center">
-  <strong>A complete multi-vendor commerce ecosystem connecting customers, merchants, and platform administrators in one integrated platform.</strong>
-</p>
-
-<p align="center">
-  Flutter • Dart • Laravel • MySQL • Firebase • GetX • REST API
+  <strong>A Multi-Vendor E-Commerce Marketplace Ecosystem</strong>
+  <br>
+  <em>Connecting customers, merchants, and commerce through one platform.</em>
 </p>
 
 ---
 
-## 🚀 Overview
+## 📌 Overview
 
-**SyStore** is a full-scale multi-vendor e-commerce ecosystem designed to connect:
+**SyStore** is a multi-vendor e-commerce marketplace designed to connect customers, merchants, and platform administrators through a unified digital commerce ecosystem.
 
-- 👤 Customers
-- 🏪 Store Owners / Merchants
-- 🛡️ Platform Administrators
+The platform is built around three primary actors:
 
-The platform is designed around a centralized marketplace model where multiple independent stores can operate inside the same customer-facing ecosystem while maintaining their own products, orders, delivery zones, branding, and operational workflows.
+- 👤 **Customer** — discovers stores, explores products, manages a cart, places orders, and interacts with reviews and favorites.
+- 🏪 **Merchant** — manages stores, products, variants, orders, delivery zones, reviews, and business analytics.
+- 🛡️ **Super Admin** — manages the marketplace, merchant onboarding, store moderation, access control, restrictions, and platform-level statistics.
 
-Unlike a traditional single-store shopping application, SyStore separates responsibilities between different actors and provides dedicated interfaces for each role.
-
-The system consists of:
-
-- 📱 **Customer Mobile Application**
-- 🏪 **Merchant Mobile Application**
-- 🖥️ **Super Admin / Control Dashboard**
-- ⚙️ **RESTful Backend**
-- 🗄️ **Relational Database**
-- 🔔 **Cloud Notification Infrastructure**
-
-The architecture is designed to support real-world e-commerce workflows such as authentication, store management, product management, shopping carts, orders, delivery zones, ratings, favorites, notifications, analytics, and administrative moderation.
+The project combines cross-platform mobile development, RESTful backend services, relational database architecture, cloud messaging, authentication workflows, localization, state management, and role-based business operations.
 
 ---
 
-# 🎯 Vision
-
-SyStore aims to provide a scalable digital marketplace where customers can discover multiple local stores from a single application while merchants retain operational independence.
-
-The platform combines:
-
-> **B2C + B2B + Centralized Marketplace Management**
-
-This allows the system to support the complete lifecycle of commerce:
+# 🧭 Platform Overview
 
 ```text
-Customer
-   │
-   ▼
-Discover Stores
-   │
-   ▼
-Browse Products
-   │
-   ▼
-Filter / Search
-   │
-   ▼
-Add Products to Cart
-   │
-   ▼
-Create Order
-   │
-   ▼
-Track Order
-   │
-   ▼
-Review / Rate
-while merchants manage:
-Merchant
-   │
-   ├── Store Profile
-   ├── Products
-   ├── Product Variants
-   ├── Orders
-   ├── Delivery Zones
-   ├── Reviews
-   ├── Notifications
-   └── Analytics
-and administrators control:
-Super Admin
-   │
-   ├── User Access
-   ├── Merchant Requests
-   ├── Store Moderation
-   ├── Blocking / Restrictions
-   ├── Platform Analytics
-   └── Dynamic Platform Management
-# Core Features
+                         ┌──────────────────────┐
+                         │      SUPER ADMIN     │
+                         │   Platform Control   │
+                         └──────────┬───────────┘
+                                    │
+                         Platform Governance
+                                    │
+                ┌───────────────────┴───────────────────┐
+                │                                       │
+        ┌───────▼────────┐                      ┌───────▼────────┐
+        │    MERCHANT    │                      │    CUSTOMER    │
+        │   Store Owner  │                      │    Shopper     │
+        └───────┬────────┘                      └───────┬────────┘
+                │                                       │
+                ▼                                       ▼
+        Store Management                         Store Discovery
+        Product Management                       Product Discovery
+        Order Management                         Shopping Cart
+        Delivery Management                      Orders
+        Reviews                                  Reviews
+        Analytics                                Favorites
+                │                                       │
+                └───────────────────┬───────────────────┘
+                                    │
+                                    ▼
+                           ┌─────────────────┐
+                           │   SHARED API    │
+                           │    PLATFORM     │
+                           └────────┬────────┘
+                                    │
+                                    ▼
+                           ┌─────────────────┐
+                           │      MySQL      │
+                           │     Database    │
+                           └─────────────────┘
+```
+
+---
+
+# ✨ Core Features
 
 ## 👤 Customer Application
 
@@ -298,7 +274,7 @@ SyStore also introduces a centralized administrative layer.
 
 The Super Admin is responsible for controlling the marketplace itself.
 
-### Administrative Capabilities
+## Administrative Capabilities
 
 - Account and access management
 - Merchant onboarding requests
@@ -331,29 +307,27 @@ This creates a three-layer ecosystem:
 
 SyStore follows a layered application architecture where presentation, state management, networking, data models, and backend services have distinct responsibilities.
 
-High-level architecture:
-
 ```text
 ┌─────────────────────────────────────────────────────┐
-│                    CLIENT LAYER                      │
+│                    CLIENT LAYER                     │
 │                                                     │
 │  Customer App        Merchant App       Admin UI    │
-│       │                    │                 │       │
-└───────┼────────────────────┼─────────────────┼───────┘
+│       │                    │                 │      │
+└───────┼────────────────────┼─────────────────┼──────┘
         │                    │                 │
         └────────────────────┼─────────────────┘
                              │
                              ▼
                   ┌────────────────────┐
-                  │    REST API        │
-                  │     Backend        │
+                  │     REST API       │
+                  │      Backend       │
                   └─────────┬──────────┘
                             │
                 ┌───────────┼───────────┐
                 │           │           │
                 ▼           ▼           ▼
-           Authentication  Business   Data Access
-                           Logic
+          Authentication  Business   Data Access
+                          Logic
                 │           │           │
                 └───────────┼───────────┘
                             ▼
@@ -567,8 +541,6 @@ Review
 Favorite
 DeliveryZone
 ```
-
-The data model establishes relationships between these entities to represent the marketplace domain.
 
 ---
 
@@ -1065,7 +1037,7 @@ Important concepts include:
 - Backend authorization
 - Account restrictions
 
-> Frontend visibility must never be considered a security boundary. Authorization must ultimately be enforced by the backend.
+> **Frontend visibility must never be considered a security boundary. Authorization must ultimately be enforced by the backend.**
 
 ---
 
@@ -1171,7 +1143,7 @@ Dynamic Management
 
 The platform covers major functional requirements including:
 
-### Customer
+## Customer
 
 - Account creation
 - Authentication
@@ -1188,7 +1160,7 @@ The platform covers major functional requirements including:
 - Notifications
 - Settings
 
-### Merchant
+## Merchant
 
 - Merchant authentication
 - Store creation
@@ -1202,7 +1174,7 @@ The platform covers major functional requirements including:
 - Reviews
 - Notifications
 
-### Administrator
+## Administrator
 
 - Access management
 - Merchant onboarding
@@ -1216,7 +1188,7 @@ The platform covers major functional requirements including:
 
 # 🧭 Non-Functional Requirements
 
-The system is designed with the following quality attributes in mind:
+The system is designed with the following quality attributes in mind.
 
 ### ⚡ Performance
 
@@ -1252,37 +1224,37 @@ Centralized services and structured API communication reduce duplicated logic.
 
 SyStore is more than a collection of screens.
 
-The project demonstrates the implementation of a complete domain-driven product ecosystem containing:
+The project demonstrates the implementation of a complete domain-oriented product ecosystem containing:
 
-### 1. Multi-role architecture
+### 1. Multi-Role Architecture
 
 Different application experiences are designed for different actors.
 
-### 2. Multi-store marketplace
+### 2. Multi-Store Marketplace
 
 Multiple independent stores operate inside one customer ecosystem.
 
-### 3. Store-aware commerce
+### 3. Store-Aware Commerce
 
 Products, carts, orders, and delivery are associated with store-level business logic.
 
-### 4. Stateful order processing
+### 4. Stateful Order Processing
 
 Orders move through business states instead of being treated as static records.
 
-### 5. Typed data layer
+### 5. Typed Data Layer
 
 API responses are represented through structured Dart models.
 
-### 6. Generated API infrastructure
+### 6. Generated API Infrastructure
 
 Generated clients and serialization code reduce repetitive networking code.
 
-### 7. Event-driven notifications
+### 7. Event-Driven Notifications
 
 Firebase Cloud Messaging enables real-time communication patterns.
 
-### 8. Centralized administration
+### 8. Centralized Administration
 
 The marketplace can be monitored and controlled through a dedicated administrative layer.
 
@@ -1290,7 +1262,7 @@ The marketplace can be monitored and controlled through a dedicated administrati
 
 The UI is prepared for multilingual experiences.
 
-### 10. Theme abstraction
+### 10. Theme Abstraction
 
 Light and dark themes are supported through centralized configuration.
 
@@ -1424,7 +1396,7 @@ Firebase configuration files are environment/project specific.
 
 Before deploying to a new Firebase project, configure the corresponding Firebase application settings for the required platforms.
 
-Do not expose private credentials, service account keys, or other sensitive backend secrets in source control.
+> **Do not expose private credentials, service account keys, or other sensitive backend secrets in source control.**
 
 ---
 
@@ -1498,18 +1470,18 @@ The project includes:
 
 Potential future improvements include:
 
-- Online payment gateway
-- Dedicated delivery application
-- Advanced recommendation engine
-- AI-powered product discovery
-- Advanced marketplace analytics
-- Real-time order tracking
-- More advanced notification workflows
-- Automated CI/CD pipeline
-- Expanded automated testing
-- Production observability and monitoring
-- Performance profiling and optimization
-- Marketplace expansion
+- 💳 Online payment gateway
+- 🚚 Dedicated delivery application
+- 🤖 Advanced recommendation engine
+- 🧠 AI-powered product discovery
+- 📈 Advanced marketplace analytics
+- 📍 Real-time order tracking
+- 🔔 More advanced notification workflows
+- ⚙️ Automated CI/CD pipeline
+- 🧪 Expanded automated testing
+- 📡 Production observability and monitoring
+- ⚡ Performance profiling and optimization
+- 🌐 Marketplace expansion
 
 ---
 
@@ -1517,7 +1489,7 @@ Potential future improvements include:
 
 Traditional e-commerce applications often focus on a single store.
 
-SyStore approaches the problem differently.
+**SyStore approaches the problem differently.**
 
 It treats commerce as an ecosystem:
 
@@ -1566,7 +1538,7 @@ Applications communicate through a backend API instead of directly depending on 
 
 The system models actual commerce entities:
 
-Products, Variants, Stores, Carts, Orders, Reviews, Favorites, and Delivery Zones.
+**Products, Variants, Stores, Carts, Orders, Reviews, Favorites, and Delivery Zones.**
 
 ### 🔔 Event-Based Communication
 
@@ -1618,7 +1590,16 @@ The system is conceptually built around three primary actors:
 
 SyStore is a software engineering project intended to demonstrate the architecture and implementation of a multi-vendor commerce platform.
 
-Production deployment should additionally include environment-specific configuration, secret management, comprehensive automated testing, backend security hardening, monitoring, logging, CI/CD, and production infrastructure configuration.
+Production deployment should additionally include:
+
+- Environment-specific configuration
+- Secret management
+- Comprehensive automated testing
+- Backend security hardening
+- Monitoring
+- Logging
+- CI/CD
+- Production infrastructure configuration
 
 ---
 
@@ -1657,11 +1638,7 @@ to create a foundation for a scalable marketplace ecosystem.
 ---
 
 <p align="center">
-
-<strong>SyStore</strong>
-
-<br>
-
-<em>Connecting customers, merchants, and commerce through one platform.</em>
-
+  <strong>SyStore</strong>
+  <br>
+  <em>Connecting customers, merchants, and commerce through one platform.</em>
 </p>
